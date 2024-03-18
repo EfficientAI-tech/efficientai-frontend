@@ -1,16 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import HomePage from './Pages/HomePage';
-
-function App() {
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Pages/HomePage";
+import ProductPage from "./Pages/ProductPage";
+import PricingPage from "./Pages/PricingPage";
+import AboutPage from "./Pages/AboutPage";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Efficient AI</h1>
-        {<HomePage/>}
-      </header>
-    </div>
-  );
+    <div className="overflow-hidden">
+    <Header />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+      </Routes>
+      <Footer />
+    </Router>
+  </div>
+  )
 }
 
-export default App;
+export default App
