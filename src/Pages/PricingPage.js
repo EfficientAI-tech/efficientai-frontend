@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const PricingPage = () => {
   return (
-    <div>PricingPage</div>
-  )
-}
+    <div className="flex justify-center items-center mx-auto mt-28">
+      PricingPage
+    </div>
+  );
+};
 
-export default PricingPage
+export default PricingPage;

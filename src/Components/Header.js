@@ -1,51 +1,55 @@
 import React, { useState } from "react";
 import "../Styles/header.css";
 import { Transition } from "@headlessui/react";
-// import logo from "../Assets/Icon.png";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-white border-y-2 shadow-lg">
+    <div className="bg-white border-y-2 shadow-lg fixed top-0 w-full">
       <nav className="nav">
-        <div className="container max-w-7xl  mx-auto flex items-center justify-around">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <span className="text-black font-bold">Logo</span>
-                {/* <img src={logo} alt="" /> */}
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center">
+              <a href="/">
+                <span className="text-black font-bold cursor-pointer text-4xl">
+                  Logo
+                </span>
+              </a>
+            </div>
+            <div className="hidden md:flex space-x-14">
+              <div className="flex items-center space-x-10">
+                <a
+                  href="/"
+                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                >
+                  Home
+                </a>
+                <a
+                  href="/about"
+                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                >
+                  Company
+                </a>
+                <a
+                  href="/product"
+                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                >
+                  Product
+                </a>
+                <a
+                  href="/pricing"
+                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                >
+                  Pricing
+                </a>
               </div>
-              <div className="hidden md:flex gap-20">
-                <div className="ml-10 flex items-baseline mt-2 space-x-4">
-                  <a
-                    href="/"
-                    className="text-gray-600 hover:text-black hover-underline px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="/about"
-                    className="text-gray-600 hover:text-black hover-underline px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Company
-                  </a>
-                  <a
-                    href="/product"
-                    className="text-gray-600 hover:text-black hover-underline px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Product
-                  </a>
-                  <a
-                    href="/pricing"
-                    className="text-gray-600 hover:text-black hover-underline px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Pricing
-                  </a>
-                </div>
-                <div className="flex items-center gap-4">
-                  <button className="text-gray-600 hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-sm font-bold bg-green-500">
-                    Join Us
-                  </button>
-                </div>
+              <div className="flex items-center gap-4">
+                <button className="text-gray-600 hover:text-black hover:text-gray-600 hover:bg-gray-100 px-6 py-4 rounded-md text-md font-medium border-r hover:bg-green-500">
+                  Contact Us
+                </button>
+                <button className="text-gray-600 hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-md font-bold bg-green-500">
+                  Join Us
+                </button>
               </div>
             </div>
             <div className="-mr-2 flex items-center md:hidden">
@@ -78,14 +82,14 @@ const Header = () => {
           enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 scale-95"
           enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75 transform"
+          leave="transition ease-in duration-95 transform"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
           className="flex text-left px-2"
         >
           {(ref) => (
-            <div className="md:hidden px-6" ref={ref}>
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-80">
+            <div className="md:hidden px-4 py-4 w-full" ref={ref}>
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
                 <a
                   href="/"
                   className="flex justify-between items-center text-gray-600 hover:text-black block px-3 py-2 text-base font-medium border-b-2 border-t-2"
@@ -96,7 +100,7 @@ const Header = () => {
                   </span>
                 </a>
                 <a
-                  href="/"
+                  href="/about"
                   className="flex justify-between items-center text-gray-600 hover:text-black block px-3 py-2 border-b-2 text-base font-medium"
                 >
                   <span>Company</span>
@@ -105,7 +109,7 @@ const Header = () => {
                   </span>
                 </a>
                 <a
-                  href="/"
+                  href="/product"
                   className="flex justify-between items-center text-gray-600 hover:text-black block px-3 py-2 border-b-2 text-base font-medium"
                 >
                   <span>Product</span>
@@ -114,7 +118,7 @@ const Header = () => {
                   </span>
                 </a>
                 <a
-                  href="/"
+                  href="/pricing"
                   className="flex justify-between items-center text-gray-600 hover:text-black block px-3 py-2 border-b-2 text-base font-medium"
                 >
                   <span>Pricing</span>
@@ -124,19 +128,13 @@ const Header = () => {
                 </a>
               </div>
 
-              <button className="flex w-full text-center items-center text-gray-600 hover:text-black text-center hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-sm font-bold bg-green-500">
-                Sign Up
-              </button>
-              <div className="flex items-center px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <button className="text-gray-600 hover:text-black hover:bg-gray-100 px-6 py-4 rounded-md text-sm font-medium">
-                  Login
+              <div className="flex gap-6 items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-5 flex-col sm:flex-row">
+                <button className="mt-3 w-full text-center text-gray-600 hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-sm font-bold bg-green-500">
+                  Join Us
                 </button>
-                <a
-                  href="/"
-                  className="text-gray-600 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
-                >
+                <button className="w-full text-center text-gray-600 hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-sm font-bold bg-green-500">
                   Contact Us
-                </a>
+                </button>
               </div>
             </div>
           )}
