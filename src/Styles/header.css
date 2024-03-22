@@ -9,7 +9,7 @@
     bottom: -24px; /* Adjust this value to change the distance between text and underline */
     width: 100%;
     height: 2px;
-    background-color: #024c02b5; /* Add your desired color here */
+    background-color: #c026d3; /* Add your desired color here */
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
