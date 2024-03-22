@@ -54,7 +54,7 @@ const Header = () => {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white mr-4"
+                className="inline-flex items-center justify-center p-2 rounded-md text-fuchsia-700 hover:text-white hover:bg-fuchsia-600 focus:outline-none focus:bg-fuchsia-600 focus:text-white mr-4"
               >
                 <svg
                   className="h-6 w-6"
