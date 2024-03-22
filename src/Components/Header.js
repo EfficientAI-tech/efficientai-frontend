@@ -5,7 +5,7 @@ import logo from "../Assets/839805_file-ai.png";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-white border-y-2 shadow-lg fixed top-0 w-full">
+    <div className="bg-white border-y-2 shadow-lg fixed top-0 w-full z-50">
       <nav className="nav">
         <div className="container mx-auto">
           <div className="flex justify-between items-center h-20">
@@ -18,19 +18,19 @@ const Header = () => {
               <div className="flex items-center space-x-10">
                 <a
                   href="/"
-                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                  className="text-gray-500 hover:text-fuchsia-800 hover-underline text-lg font-bold"
                 >
                   Home
                 </a>
                 <a
                   href="/about"
-                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                  className="text-gray-500 hover:text-fuchsia-800 hover-underline text-lg font-bold"
                 >
                   Company
                 </a>
                 <a
                   href="/product"
-                  className="text-gray-600 hover:text-black hover-underline text-md font-semibold"
+                  className="text-gray-500 hover:text-fuchsia-800 hover-underline text-lg font-bold"
                 >
                   Product
                 </a>
@@ -42,9 +42,11 @@ const Header = () => {
                 </a>
               </div>
               <div className="flex items-center gap-4">
-                <button className="text-gray-600 hover:text-white hover:bg-fuchsia-600 px-6 py-4 rounded-md text-md font-medium border-r hover:bg-green-500">
-                  Contact Us
-                </button>
+                <a href="/contact">
+                  <button className="text-gray-600 hover:text-white hover:bg-fuchsia-600 px-6 py-4 rounded-md text-md font-medium border-r">
+                    Contact Us
+                  </button>
+                </a>
                 <button className="text-white hover:bg-fuchsia-600 hover:font-bold px-6 py-4 rounded-md text-md font-bold bg-fuchsia-700">
                   Join Us
                 </button>
@@ -83,10 +85,10 @@ const Header = () => {
           leave="transition ease-in duration-95 transform"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
-          className="flex text-left px-2 bg-fuchsia-100 h-[100vh]"
+          className="flex text-left px-2 bg-fuchsia-100 h-[100vh] z-50"
         >
           {(ref) => (
-            <div className="md:hidden px-4 py-4 w-full mt-20" ref={ref}>
+            <div className="md:hidden px-4 py-4 w-full mt-20" ref={ref} z-50>
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
                 <a
                   href="/"
@@ -127,12 +129,18 @@ const Header = () => {
               </div>
 
               <div className="flex gap-6 items-center justify-center px-2 pt-2 pb-3 space-y-3 sm:px-5 flex-col sm:flex-row">
-                <button className="mt-3 w-full text-center text-white hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-lg font-bold bg-fuchsia-600">
-                  Join Us
-                </button>
-                <button className="w-full text-center text-white hover:text-black hover:bg-green-600 hover:font-bold px-6 py-4 rounded-md text-lg font-bold bg-fuchsia-600">
-                  Contact Us
-                </button>
+                <a
+                  href="/"
+                  className="mt-3 w-full text-center text-white hover:text-black hover:font-bold px-6 py-4 rounded-md text-lg font-bold bg-fuchsia-600"
+                >
+                  <button className="">Join Us</button>
+                </a>
+                <a
+                  href="/contact"
+                  className="w-full text-center text-white hover:text-black hover:font-bold px-6 py-4 rounded-md text-lg font-bold bg-fuchsia-600"
+                >
+                  <button>Contact Us</button>
+                </a>
               </div>
             </div>
           )}

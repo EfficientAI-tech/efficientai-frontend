@@ -6,6 +6,7 @@ import PricingPage from "./Pages/PricingPage";
 import AboutPage from "./Pages/AboutPage";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import ContactForm from './Components/ContactForm';
 const App = () => {
   return (
     <div className="overflow-hidden">
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/product" element={<ProductPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/contact" element={<ContactForm/>} />
       </Routes>
       <Footer />
     </Router>
